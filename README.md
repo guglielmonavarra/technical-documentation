@@ -122,7 +122,7 @@ React è una libreria JavaScript per creare interfacce utente. Esso è basato su
 
 ## Database
 
-Ogni microservizio interagisce con un proprio database MariaDB. Tale configurazione ci consente di diminuire il carico e rendere il sistema scalabile orizzontalmente. Tuttavia per 	raggiungere questa configurazioni è necessario aggiungere alcune ridondanze nei vari schemi dei database in modo di avere una solida integrità.
+Ogni microservizio interagisce con un proprio database MariaDB. Tale configurazione ci consente di diminuire il carico e rendere il sistema scalabile orizzontalmente. Tuttavia per 	raggiungere questa configurazione è necessario aggiungere alcune ridondanze nei vari schemi dei database in modo di avere una solida integrità.
 
 
 - **powerskin_user_db**: Tale database viene utilizzato, gestito e migrato dal microservizio oauth2. Rappresenta il database principale, pertanto deve essere il primo ad essere generato;
@@ -524,6 +524,6 @@ Per importare il progetto di un microservizio bisogna seguire i seguenti passi:
 6.  **Attendere il completamento dell'importazione**: IntelliJ IDEA importerà il progetto e le dipendenze di Gradle dal repository GitHub. Questo processo potrebbe richiedere qualche minuto, a seconda delle dimensioni del progetto e della velocità della connessione internet.
         
 7.  **Eseguire il progetto**: Ora che il progetto è stato importato con successo, per eseguirlo bisogna aggiungere tutti i parametri necessari nel file **application.properties**. 
-Questo file deve essere editato solo se si intende eseguire il progetto in locale e le modifiche apportate al suo interno non devono mai essere riportate sulla repository, questo perché la pipeline ogni volta che esegue il deploy del progetto si occupa della generazione del file application.properties. Per capire quali parametri sono necessari basta visionare lo script **build.gradle** e capire quali acquisisce (il significato di tali variabili è stato descritto nei capitoli precedenti). Un'altra strada sarebbe quella di inserire in IntelliJ tutte le variabili d'ambiente necessarie (è possibile anche elencarle  tutte).
+Questo file deve essere editato solo se si intende eseguire il progetto in locale e le modifiche apportate al suo interno non devono mai essere riportate sulla repository, questo perché la pipeline ogni volta che esegue il deploy del progetto si occupa della generazione del file application.properties. Per capire quali parametri sono necessari basta visionare lo script **build.gradle** e capire quali acquisisce (il significato di tali variabili è stato descritto nei capitoli precedenti). Un'altra strada sarebbe quella di inserire in IntelliJ tutte le variabili d'ambiente necessarie (è possibile anche elencarle  tutte) ed eseguire il building tramite gradle (task build tra i task gradle disponibili in IntelliJ).
 
 
