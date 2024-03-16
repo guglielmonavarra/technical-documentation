@@ -1,6 +1,6 @@
 # Architettura di Moonbetting
 
-Table of contents
+Sommario
 =================
 
 <!--ts-->
