@@ -460,6 +460,25 @@ Successivamente, per ogni SKIN, in questo caso Moonbetting, bisogna creare un nu
 ## Script di pipeline
 Ogni progetto **Multibranch Pipeline** e quindi la repository di ogni progetto, deve contenere una pipeline Jenkins includendo un file di testo, denominato **Jenkinsfile** contenente lo script della pipeline. Lo script della pipeline specifica i processi CI/CD attraverso i quali passa l'applicazione. All'interno dello script vi sono le condizioni di building locale oppure building su AWS.
 
+Il file di script **Jenkinsfile** rappresenta la cosiddetta pipeline dichiarativa. Esso rappresenta un potente strumento di Jenkins per automatizzare il processo d'ntegrazione continua (CI) e distribuzione continua (CD) di un'applicazione software. Piuttosto che utilizzare l'interfaccia grafica di Jenkins per definire passo dopo passo le varie fasi della pipeline, la pipeline dichiarativa permette di definire la pipeline in modo più strutturato e leggibile tramite un file di script chiamato.
+Il  **Jenkinsfile** è un file di script scritto utilizzando la sintassi del linguaggio Groovy. Questo file definisce in modo chiaro e strutturato tutte le fasi del processo di CI/CD, inclusi i test, la compilazione, il rilascio e altro. Essendo memorizzato all'interno del repository del progetto, il Jenkinsfile facilita il versionamento.
+I blocchi fondamentali contenuti all'interno dello script sono: **Agent**, **Stage**, **Step**, **Direttive**, **Variabili d'ambiente** e i **Trigger**.
+    
+**Agent**: specifica dove la pipeline deve essere eseguita. Può essere un nodo Jenkins, un agente Docker, una macchina virtuale o qualsiasi altra piattaforma supportata da Jenkins, compreso AWS. La scelta dell'agente dipende dalle esigenze del progetto e dalle risorse disponibili.
+    
+**Stage**: rappresenta una fase logica della pipeline, come "Build", "Test", "Deploy", ecc. Ogni stage contiene uno o più passaggi (steps) che devono essere completati prima di passare allo stage successivo. Questa struttura modulare e organizzata rende la pipeline più leggibile e gestibile.
+    
+**Step**: Uno step è un'azione specifica eseguita all'interno di uno stage. Possono essere eseguite varie azioni, come l'esecuzione di comandi di shell, la compilazione del codice, l'esecuzione dei test e così via. Gli steps possono essere definiti in modo dichiarativo nel Jenkinsfile, consentendo un maggiore controllo sul processo di build.
+    
+**Direttive**: forniscono istruzioni aggiuntive alla pipeline e specificano come Jenkins dovrebbe interpretare e gestire il processo di build. Le direttive comuni includono `agent`, `stages`, `steps`, `environment`, `tools` e altre. Queste direttive consentono di personalizzare la pipeline in base alle esigenze specifiche del progetto.
+    
+**Variabili d'ambiente**: possono essere definite per passare configurazioni o valori che devono essere utilizzati durante l'esecuzione della pipeline.
+    
+**Trigger**: determinano quando la pipeline deve essere eseguita. Possono essere attivati da eventi come il commit di codice nel repository di versionamento, l'invio di una richiesta di pull (pull request), un timer programmato, l'aggiornamento di una dipendenza esterna e così via. 
+    
+La pipeline dichiarativa di Jenkins offre un'approccio strutturato, flessibile e scalabile per automatizzare il processo di CI/CD delle applicazioni software. Grazie alla sua sintassi chiara e alla sua capacità di adattarsi alle esigenze del progetto, la pipeline dichiarativa semplifica la gestione del processo di build e distribuzione, migliorando l'efficienza e la qualità del software prodotto.
+
+
 
 # Documentazione API
 
