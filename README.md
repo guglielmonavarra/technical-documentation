@@ -460,6 +460,11 @@ Successivamente, per ogni SKIN, in questo caso Moonbetting, bisogna creare un nu
 ## Script di pipeline
 Ogni progetto **Multibranch Pipeline** e quindi la repository di ogni progetto, deve contenere una pipeline Jenkins includendo un file di testo, denominato **Jenkinsfile** contenente lo script della pipeline. Lo script della pipeline specifica i processi CI/CD attraverso i quali passa l'applicazione. All'interno dello script vi sono le condizioni di building locale oppure building su AWS.
 
+L'immagine sottostante mostra lo schema a blocchi della pipeline:
+
+![flow](https://github.com/guglielmonavarra/technical-documentation/blob/main/realworld-pipeline-flow.png?raw=true)
+
+
 Il file di script **Jenkinsfile** rappresenta la cosiddetta pipeline dichiarativa. Esso rappresenta un potente strumento di Jenkins per automatizzare il processo d'ntegrazione continua (CI) e distribuzione continua (CD) di un'applicazione software. Piuttosto che utilizzare l'interfaccia grafica di Jenkins per definire passo dopo passo le varie fasi della pipeline, la pipeline dichiarativa permette di definire la pipeline in modo più strutturato e leggibile tramite un file di script chiamato.
 Il  **Jenkinsfile** è un file di script scritto utilizzando la sintassi del linguaggio Groovy. Questo file definisce in modo chiaro e strutturato tutte le fasi del processo di CI/CD, inclusi i test, la compilazione, il rilascio e altro. Essendo memorizzato all'interno del repository del progetto, il Jenkinsfile facilita il versionamento.
 I blocchi fondamentali contenuti all'interno dello script sono: **Agent**, **Stage**, **Step**, **Direttive**, **Variabili d'ambiente** e i **Trigger**.
