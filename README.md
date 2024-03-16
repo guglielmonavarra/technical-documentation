@@ -26,6 +26,7 @@ Table of contents
 * [Installazione](#installazione)
   * [Script di pipeline](#script-di-pipeline)
 * [Documentazione API](#documentazione-api)
+* [Importazione progetto in IntelliJ](#importazione-progetto-in-intellij)
 
 <!--te-->
 
@@ -477,4 +478,28 @@ Tutta la documentazione delle API che i microservizi mettono a disposizione è f
 | SPORT           |http://address:port/swagger-ui/       |
 | CASINO            |http://address:port/swagger-ui/      |
 | PAYMENT            |http://address:port/swagger-ui/      |
+
+
+
+
+# Importazione progetto in IntelliJ
+Per importare il progetto di un microservizio bisogna seguire i seguenti passi:
+
+1.  **Clonare il repository**: Prima di tutto, è necessario clonare il repository del progetto Java Spring con Gradle da GitHub sul tuo computer. Puoi farlo utilizzando Git attraverso la riga di comando o utilizzando l'interfaccia grafica di un client Git come GitKraken o GitHub Desktop.    
+   
+    `git clone <URL_del_repository>` 
+    
+2.  **Aprire IntelliJ IDEA**: Avvia IntelliJ IDEA sul tuo computer.
+    
+3.  **Aprire il progetto**: Dalla finestra principale di IntelliJ IDEA, seleziona "Open" e naviga fino alla directory in cui hai clonato il repository del progetto. Seleziona la cartella principale del progetto e fai clic su "Apri".
+    
+4.  **Importare il progetto Gradle**: Se il progetto utilizza Gradle come sistema di build, IntelliJ IDEA dovrebbe rilevarlo automaticamente e proporre di importarlo come progetto Gradle. Assicurati di selezionare l'opzione "Import Gradle project" quando richiesto.
+    
+5.  **Configurare le impostazioni di Gradle**: Durante il processo di importazione, IntelliJ IDEA chiederà eventuali configurazioni aggiuntive per il progetto Gradle, come la versione di Gradle da utilizzare. Di solito puoi accettare le impostazioni predefinite, ma puoi modificarle se necessario.
+    
+6.  **Attendere il completamento dell'importazione**: IntelliJ IDEA importerà il progetto e le dipendenze di Gradle dal repository GitHub. Questo processo potrebbe richiedere qualche minuto, a seconda delle dimensioni del progetto e della velocità della connessione internet.
+        
+7.  **Eseguire il progetto**: Ora che il progetto è stato importato con successo, per eseguirlo bisogna aggiungere tutti i parametri necessari nel file **application.properties**. 
+Questo file deve essere editato solo se si intende eseguire il progetto in locale e le modifiche apportate al suo interno non devono mai essere riportate sulla repository, questo perché la pipeline ogni volta che esegue il deploy del progetto si occupa della generazione del file application.properties. Per capire quali parametri sono necessari basta visionare lo script **build.gradle** e capire quali acquisisce (il significato di tali variabili è stato descritto nei capitoli precedenti). Un'altra strada sarebbe quella di inserire in IntelliJ tutte le variabili d'ambiente necessarie (è possibile anche elencarle  tutte).
+
 
